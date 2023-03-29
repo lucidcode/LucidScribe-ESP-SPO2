@@ -3,11 +3,11 @@ using System.Drawing;
 
 namespace lucidcode.LucidScribe.Plugin.ESPSPO2
 {
-    namespace Ir
+    namespace Spo2
     {
         public class PluginHandler : Interface.LucidPluginBase
         {
-            public override string Name { get { return "ESP IR"; } }
+            public override string Name { get { return "ESP SPO2"; } }
 
             public override bool Initialize()
             {
@@ -25,7 +25,7 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
             {
                 get
                 {
-                    return Device.GetIr();
+                    return Device.GetSpo2();
                 }
             }
 
@@ -36,18 +36,18 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
         }
     }
 
-    namespace IrRaw
+    namespace Spo2Raw
         {
             public class PluginHandler : Interface.ILluminatedPlugin
             {
-                public string Name { get { return "ESP IR Raw"; } }
+                public string Name { get { return "ESP SPO2 Raw"; } }
 
                 public bool Initialize()
                 {
                     try
                     {
                         bool initialized = Device.Initialize();
-                        Device.IrChanged += IrChanged;
+                        Device.Spo2Changed += Spo2Changed;
                         return initialized;
                     }
                     catch (Exception ex)
@@ -57,7 +57,7 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
                 }
 
                 public event Interface.SenseHandler Sensed;
-                public void IrChanged(object sender, EventArgs e)
+                public void Spo2Changed(object sender, EventArgs e)
                 {
                     if (ClearBuffer)
                     {
@@ -77,7 +77,7 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
 
                 public void Dispose()
                 {
-                    Device.IrChanged -= IrChanged;
+                    Device.Spo2Changed -= Spo2Changed;
                     Device.Dispose();
                 }
 

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Channels\BPM.cs" />
     <Compile Include="Channels\AvgBPM.cs" />
+    <Compile Include="Channels\SPO2.cs" />
     <Compile Include="Channels\REM.cs" />
     <Compile Include="Channels\IR.cs" />
     <Compile Include="PluginHandler.cs" />

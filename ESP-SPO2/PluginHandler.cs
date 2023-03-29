@@ -10,14 +10,17 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
         static bool InitError;
         static SerialPort serialPort;
         static double irValue;
+        static double spo2Value;
         static double bpmValue;
         static double avgBpmValue;
 
         static double irTicks;
+        static double spo2Ticks;
         static double bpmTicks;
         static double avgBpmTicks;
 
         static bool clearIr;
+        static bool clearSpo2;
         static bool clearBpm;
         static bool clearAvgBpm;
 
@@ -26,6 +29,7 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
         public static int BlinkInterval = 28;
 
         public static EventHandler<EventArgs> IrChanged;
+        public static EventHandler<EventArgs> Spo2Changed;
         public static EventHandler<EventArgs> BpmChanged;
         public static EventHandler<EventArgs> AvgBpmChanged;
 
@@ -107,6 +111,22 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
                                     IrChanged((object)value, null);
                                 }
                             }
+                            else if (valuePair[0] == "SPO2")
+                            {
+                                if (clearSpo2)
+                                {
+                                    clearSpo2 = false;
+                                    spo2Value = 0;
+                                    spo2Ticks = 0;
+                                }
+                                spo2Value += value;
+                                spo2Ticks++;
+
+                                if (Spo2Changed != null)
+                                {
+                                    Spo2Changed((object)value, null);
+                                }
+                            }
                             else if (valuePair[0] == "BPM")
                             {
                                 if (clearBpm)
@@ -170,6 +190,14 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
             if (irTicks == 0) return 0;
             double average = irValue / irTicks;
             clearIr = true;
+            return average;
+        }
+
+        public static Double GetSpo2()
+        {
+            if (spo2Ticks == 0) return 0;
+            double average = spo2Value / spo2Ticks;
+            clearSpo2 = true;
             return average;
         }
 

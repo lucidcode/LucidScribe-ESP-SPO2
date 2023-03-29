@@ -3,42 +3,40 @@ using System.Drawing;
 
 namespace lucidcode.LucidScribe.Plugin.ESPSPO2
 {
-    namespace lucidcode.LucidScribe.Plugin.ESPSPO2
+    namespace AvgBPM
     {
-        namespace AvgBPM
+        public class PluginHandler : Interface.LucidPluginBase
         {
-            public class PluginHandler : Interface.LucidPluginBase
+            public override string Name { get { return "ESP Avg BPM"; } }
+
+            public override bool Initialize()
             {
-                public override string Name { get { return "ESP Avg BPM"; } }
-
-                public override bool Initialize()
+                try
                 {
-                    try
-                    {
-                        return Device.Initialize();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw (new Exception("The '" + Name + "' plugin failed to initialize: " + ex.Message));
-                    }
+                    return Device.Initialize();
                 }
-
-                public override double Value
+                catch (Exception ex)
                 {
-                    get
-                    {
-                        return Device.GetAvgBpm();
-                    }
-                }
-
-                public override void Dispose()
-                {
-                    Device.Dispose();
+                    throw (new Exception("The '" + Name + "' plugin failed to initialize: " + ex.Message));
                 }
             }
-        }
 
-        namespace AvgBpmRaw
+            public override double Value
+            {
+                get
+                {
+                    return Device.GetAvgBpm();
+                }
+            }
+
+            public override void Dispose()
+            {
+                Device.Dispose();
+            }
+        }
+    }
+
+    namespace AvgBpmRaw
         {
             public class PluginHandler : Interface.ILluminatedPlugin
             {
@@ -153,5 +151,4 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
                 }
             }
         }
-    }
 }

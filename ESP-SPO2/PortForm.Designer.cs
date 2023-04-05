@@ -30,42 +30,48 @@
     {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PortForm));
-            this.pnlPlugins = new Controls.Panel3D();
+            this.pnlPlugins = new lucidcode.Controls.Panel3D();
             this.lstPorts = new System.Windows.Forms.ListView();
             this.mnuPortsList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuRefreshPorts = new System.Windows.Forms.ToolStripMenuItem();
             this.lstImg = new System.Windows.Forms.ImageList(this.components);
-            this.Panel3D4 = new Controls.Panel3D();
+            this.Panel3D4 = new lucidcode.Controls.Panel3D();
             this.Label5 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
-            this.panel3D3 = new Controls.Panel3D();
+            this.panel3D3 = new lucidcode.Controls.Panel3D();
             this.txtThreshold = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbAlgorithm = new System.Windows.Forms.ComboBox();
             this.cmbBlinkInterval = new System.Windows.Forms.ComboBox();
-            this.panel3D5 = new Controls.Panel3D();
+            this.panel3D5 = new lucidcode.Controls.Panel3D();
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.panel3D1 = new lucidcode.Controls.Panel3D();
+            this.panel3D2 = new lucidcode.Controls.Panel3D();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataTextbox = new System.Windows.Forms.TextBox();
             this.pnlPlugins.SuspendLayout();
             this.mnuPortsList.SuspendLayout();
             this.Panel3D4.SuspendLayout();
             this.panel3D3.SuspendLayout();
             this.panel3D5.SuspendLayout();
+            this.panel3D1.SuspendLayout();
+            this.panel3D2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlPlugins
             // 
-            this.pnlPlugins.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlPlugins.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPlugins.BackColor = System.Drawing.Color.White;
             this.pnlPlugins.Controls.Add(this.lstPorts);
             this.pnlPlugins.Controls.Add(this.Panel3D4);
             this.pnlPlugins.Location = new System.Drawing.Point(12, 132);
             this.pnlPlugins.Name = "pnlPlugins";
-            this.pnlPlugins.Size = new System.Drawing.Size(308, 218);
+            this.pnlPlugins.Size = new System.Drawing.Size(308, 162);
             this.pnlPlugins.TabIndex = 5;
             // 
             // lstPorts
@@ -81,7 +87,7 @@
             this.lstPorts.Location = new System.Drawing.Point(3, 25);
             this.lstPorts.MultiSelect = false;
             this.lstPorts.Name = "lstPorts";
-            this.lstPorts.Size = new System.Drawing.Size(302, 190);
+            this.lstPorts.Size = new System.Drawing.Size(302, 134);
             this.lstPorts.TabIndex = 8;
             this.lstPorts.TileSize = new System.Drawing.Size(150, 32);
             this.lstPorts.UseCompatibleStateImageBehavior = false;
@@ -366,12 +372,79 @@
             this.label11.Text = "Settings";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel3D1
+            // 
+            this.panel3D1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3D1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel3D1.Controls.Add(this.dataTextbox);
+            this.panel3D1.Controls.Add(this.panel3D2);
+            this.panel3D1.Location = new System.Drawing.Point(12, 300);
+            this.panel3D1.Name = "panel3D1";
+            this.panel3D1.Size = new System.Drawing.Size(308, 195);
+            this.panel3D1.TabIndex = 285;
+            // 
+            // panel3D2
+            // 
+            this.panel3D2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3D2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3D2.Controls.Add(this.label10);
+            this.panel3D2.Controls.Add(this.label12);
+            this.panel3D2.Location = new System.Drawing.Point(0, 0);
+            this.panel3D2.Name = "panel3D2";
+            this.panel3D2.Size = new System.Drawing.Size(308, 24);
+            this.panel3D2.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
+            this.label10.Location = new System.Drawing.Point(3, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(19, 19);
+            this.label10.TabIndex = 4;
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(24, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(281, 19);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Data";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dataTextbox
+            // 
+            this.dataTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataTextbox.BackColor = System.Drawing.Color.Black;
+            this.dataTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataTextbox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dataTextbox.Font = new System.Drawing.Font("Courier New", 8.25F);
+            this.dataTextbox.ForeColor = System.Drawing.Color.White;
+            this.dataTextbox.Location = new System.Drawing.Point(2, 26);
+            this.dataTextbox.Multiline = true;
+            this.dataTextbox.Name = "dataTextbox";
+            this.dataTextbox.ReadOnly = true;
+            this.dataTextbox.Size = new System.Drawing.Size(303, 166);
+            this.dataTextbox.TabIndex = 5;
+            // 
             // PortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(332, 362);
+            this.ClientSize = new System.Drawing.Size(332, 507);
+            this.Controls.Add(this.panel3D1);
             this.Controls.Add(this.panel3D3);
             this.Controls.Add(this.pnlPlugins);
             this.Font = new System.Drawing.Font("Verdana", 8.25F);
@@ -386,6 +459,9 @@
             this.panel3D3.ResumeLayout(false);
             this.panel3D3.PerformLayout();
             this.panel3D5.ResumeLayout(false);
+            this.panel3D1.ResumeLayout(false);
+            this.panel3D1.PerformLayout();
+            this.panel3D2.ResumeLayout(false);
             this.ResumeLayout(false);
 
     }
@@ -410,5 +486,10 @@
     private System.Windows.Forms.ComboBox cmbBlinkInterval;
     private System.Windows.Forms.TextBox txtThreshold;
     internal System.Windows.Forms.Label label7;
-  }
+        internal Controls.Panel3D panel3D1;
+        internal Controls.Panel3D panel3D2;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox dataTextbox;
+    }
 }

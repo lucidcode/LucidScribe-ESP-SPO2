@@ -48,12 +48,13 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
                         Algorithm = formPort.Algorithm;
                         BlinkInterval = formPort.BlinkInterval / 10;
                         Threshold = formPort.Threshold;
+                        var selectedPort = formPort.SelectedPort;
 
                         formPort = new PortForm();
                         formPort.Show();
 
                         // Open the COM port
-                        serialPort = new SerialPort(formPort.SelectedPort);
+                        serialPort = new SerialPort(selectedPort);
                         serialPort.BaudRate = 115200;
                         serialPort.Parity = Parity.None;
                         //serialPort.DataBits = 8;

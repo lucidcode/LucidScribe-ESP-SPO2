@@ -102,7 +102,8 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
                         var valuePair = column.Split('=');
                         if (valuePair.Length > 1)
                         {
-                            var value = Convert.ToDouble(valuePair[1]);
+                            var value = 0.0;
+                            Double.TryParse(valuePair[1], out value);
                             if (valuePair[0] == "IR")
                             {
                                 if (clearIr)

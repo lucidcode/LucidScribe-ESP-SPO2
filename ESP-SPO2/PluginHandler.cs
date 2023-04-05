@@ -54,7 +54,7 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
 
                         // Open the COM port
                         serialPort = new SerialPort(formPort.SelectedPort);
-                        serialPort.BaudRate = 9600;
+                        serialPort.BaudRate = 115200;
                         serialPort.Parity = Parity.None;
                         //serialPort.DataBits = 8;
                         //serialPort.StopBits = StopBits.One;

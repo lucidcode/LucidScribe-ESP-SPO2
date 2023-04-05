@@ -68,6 +68,18 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
             }
         }
 
+        public void UpdateData(string data)
+        {
+            if (dataTextbox.InvokeRequired)
+            {
+                dataTextbox.BeginInvoke((MethodInvoker)delegate () { dataTextbox.Text = data; });
+            }
+            else
+            {
+                dataTextbox.Text = data;
+            }
+        }
+
         private void LoadSettings()
         {
             XmlDocument xmlSettings = new XmlDocument();

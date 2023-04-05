@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO.Ports;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace lucidcode.LucidScribe.Plugin.ESPSPO2
@@ -33,11 +34,13 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
         public static EventHandler<EventArgs> BpmChanged;
         public static EventHandler<EventArgs> AvgBpmChanged;
 
+        public static PortForm formPort;
+
         public static Boolean Initialize()
         {
             if (!Initialized & !InitError)
             {
-                PortForm formPort = new PortForm();
+                formPort = new PortForm();
                 if (formPort.ShowDialog() == DialogResult.OK)
                 {
                     try
@@ -45,6 +48,9 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
                         Algorithm = formPort.Algorithm;
                         BlinkInterval = formPort.BlinkInterval / 10;
                         Threshold = formPort.Threshold;
+
+                        formPort = new PortForm();
+                        formPort.Show();
 
                         // Open the COM port
                         serialPort = new SerialPort(formPort.SelectedPort);
@@ -83,6 +89,7 @@ namespace lucidcode.LucidScribe.Plugin.ESPSPO2
             try
             {
                 var data = serialPort.ReadExisting();
+                formPort.UpdateData(data);
                 var lines = data.Split(new string[] { "\r\n" }, StringSplitOptions.None);
 
                 foreach (var line in lines)

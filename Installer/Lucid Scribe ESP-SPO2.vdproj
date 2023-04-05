@@ -170,7 +170,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:3.5.30729  "
+                "FrameworkVersion" = "8:3.5.30729   "
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=76617"
                 }
@@ -411,15 +411,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Lucid Scribe ESP-SPO2"
-        "ProductCode" = "8:{5B024ECE-B4FE-4886-9CEC-6BA435EEAFD8}"
-        "PackageCode" = "8:{FED646A0-1C58-4177-9EA5-96071D6CA739}"
+        "ProductCode" = "8:{318E84D7-A6D3-49DE-918F-AD08571CE1E6}"
+        "PackageCode" = "8:{ACAB95E7-CDBC-42D6-A7C9-FE115AAC9007}"
         "UpgradeCode" = "8:{59032C20-F059-4DA7-8D8B-462C04007A63}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:lucidcode"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://www.lucid-code.com/Support"
